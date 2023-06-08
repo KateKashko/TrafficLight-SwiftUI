@@ -7,15 +7,36 @@
 
 import SwiftUI
 
+enum TrafficLightColor {
+    case red
+    case yellow
+    case green
+}
+
 struct ContentView: View {
+   
+    @State private var currentColor: TrafficLightColor = .red
+    @State private var opacity = 0.3
+
+    let redLight = LightView(color: .red, figure: "figure.stand")
+    let yellowLight = LightView(color: .yellow, figure: "")
+    let greenLight = LightView(color: .green, figure: "figure.walk")
+    
+    
+    
     var body: some View {
+        
         VStack {
             LightView(color: .red, figure: "figure.stand")
+                .opacity(currentColor == .red ? 1 : 0.3)
             LightView(color: .yellow, figure: "")
+                .opacity(currentColor == .yellow ? 1 : 0.3)
             LightView(color: .green, figure: "figure.walk")
+                .opacity(currentColor == .green ? 1 : 0.3)
             Spacer()
-            Button(action: {}) {
-                
+            Button(action: {
+                changeColor()
+            }) {
                 Text("Next")
                     .font(.largeTitle)
                     .frame(width: 150.0, height: 50.0)
@@ -27,13 +48,27 @@ struct ContentView: View {
             
         }
         .padding(.top, 40)
-//        private func nextColor() {
-//
-//        }
+    }
+    private func changeColor() {
+        switch currentColor {
+        case .red:
+            currentColor = .yellow
+        case .yellow:
+            currentColor = .green
+        case .green:
+            currentColor = .red
+        }
     }
 }
+
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
+//extension ContentView {
+//    private enum CurrentLight {
+//        case red, yellow, green
+//    }
+//}

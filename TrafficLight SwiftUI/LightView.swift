@@ -13,20 +13,20 @@ struct LightView: View {
     
     var body: some View {
         ZStack {
-            Rectangle()
-                .frame(width: 140, height: 140)
-                .cornerRadius(20)
+//            Rectangle()
+//                .frame(width: 140, height: 140)
+//                .cornerRadius(20)
             Circle()
                 .frame(width: 120)
                 .foregroundColor(color)
-            Image(systemName: figure)
-                .font(.system(size: 70))
+//            Image(systemName: figure)
+//                .font(.system(size: 70))
         }
     }
 }
 
 struct LightView_Previews: PreviewProvider {
     static var previews: some View {
-        LightView(color: .blue, figure: "figure.stand")
+        LightView(color: .red, figure: "figure.stand")
     }
 }
