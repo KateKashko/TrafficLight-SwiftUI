@@ -18,12 +18,6 @@ struct ContentView: View {
     @State private var currentColor: TrafficLightColor = .red
     @State private var opacity = 0.3
 
-    let redLight = LightView(color: .red, figure: "figure.stand")
-    let yellowLight = LightView(color: .yellow, figure: "")
-    let greenLight = LightView(color: .green, figure: "figure.walk")
-    
-    
-    
     var body: some View {
         
         VStack {
@@ -45,10 +39,10 @@ struct ContentView: View {
                     .background(Color.blue)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
             }
-            
         }
         .padding(.top, 40)
     }
+    
     private func changeColor() {
         switch currentColor {
         case .red:
@@ -67,8 +61,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-//extension ContentView {
-//    private enum CurrentLight {
-//        case red, yellow, green
-//    }
-//}
+
