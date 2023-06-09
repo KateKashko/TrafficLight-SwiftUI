@@ -12,6 +12,7 @@
 		936B59B52A31B69F00A02B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 936B59B42A31B69F00A02B11 /* Assets.xcassets */; };
 		936B59B82A31B69F00A02B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 936B59B72A31B69F00A02B11 /* Preview Assets.xcassets */; };
 		936B59BF2A32089A00A02B11 /* LightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936B59BE2A32089A00A02B11 /* LightView.swift */; };
+		93A4199D2A32F3D2002D41A1 /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A4199C2A32F3D2002D41A1 /* FrameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		936B59B42A31B69F00A02B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		936B59B72A31B69F00A02B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		936B59BE2A32089A00A02B11 /* LightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightView.swift; sourceTree = "<group>"; };
+		93A4199C2A32F3D2002D41A1 /* FrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,9 +57,10 @@
 			children = (
 				936B59B02A31B69D00A02B11 /* TrafficLight_SwiftUIApp.swift */,
 				936B59B22A31B69D00A02B11 /* ContentView.swift */,
+				936B59BE2A32089A00A02B11 /* LightView.swift */,
+				93A4199C2A32F3D2002D41A1 /* FrameView.swift */,
 				936B59B42A31B69F00A02B11 /* Assets.xcassets */,
 				936B59B62A31B69F00A02B11 /* Preview Content */,
-				936B59BE2A32089A00A02B11 /* LightView.swift */,
 			);
 			path = "TrafficLight SwiftUI";
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93A4199D2A32F3D2002D41A1 /* FrameView.swift in Sources */,
 				936B59BF2A32089A00A02B11 /* LightView.swift in Sources */,
 				936B59B32A31B69D00A02B11 /* ContentView.swift in Sources */,
 				936B59B12A31B69D00A02B11 /* TrafficLight_SwiftUIApp.swift in Sources */,

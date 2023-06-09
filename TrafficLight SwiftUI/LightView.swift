@@ -13,14 +13,11 @@ struct LightView: View {
     
     var body: some View {
         ZStack {
-//            Rectangle()
-//                .frame(width: 140, height: 140)
-//                .cornerRadius(20)
             Circle()
                 .frame(width: 120)
                 .foregroundColor(color)
-//            Image(systemName: figure)
-//                .font(.system(size: 70))
+            Image(systemName: figure)
+                .font(.system(size: 70))
         }
     }
 }

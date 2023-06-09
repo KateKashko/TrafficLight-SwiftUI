@@ -16,17 +16,26 @@ enum TrafficLightColor {
 struct ContentView: View {
    
     @State private var currentColor: TrafficLightColor = .red
-    @State private var opacity = 0.3
 
     var body: some View {
         
         VStack {
-            LightView(color: .red, figure: "figure.stand")
-                .opacity(currentColor == .red ? 1 : 0.3)
-            LightView(color: .yellow, figure: "")
-                .opacity(currentColor == .yellow ? 1 : 0.3)
-            LightView(color: .green, figure: "figure.walk")
-                .opacity(currentColor == .green ? 1 : 0.3)
+            ZStack {
+                FrameView()
+                LightView(color: .red, figure: "figure.stand")
+                    .opacity(currentColor == .red ? 1 : 0.3)
+            }
+            ZStack {
+                FrameView()
+                LightView(color: .yellow, figure: "")
+                    .opacity(currentColor == .yellow ? 1 : 0.3)
+            }
+            
+            ZStack {
+                FrameView()
+                LightView(color: .green, figure: "figure.walk")
+                    .opacity(currentColor == .green ? 1 : 0.3)
+            }
             Spacer()
             Button(action: {
                 changeColor()
