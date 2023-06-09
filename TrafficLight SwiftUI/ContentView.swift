@@ -16,7 +16,7 @@ enum TrafficLightColor {
 struct ContentView: View {
    
     @State private var currentColor: TrafficLightColor = .red
-
+    @State private var buttonText = "Start"
     var body: some View {
         
         VStack {
@@ -39,8 +39,9 @@ struct ContentView: View {
             Spacer()
             Button(action: {
                 changeColor()
+                updateButtonText()
             }) {
-                Text("Next")
+                Text(buttonText)
                     .font(.largeTitle)
                     .frame(width: 150.0, height: 50.0)
                     .fontWeight(.medium)
@@ -53,6 +54,7 @@ struct ContentView: View {
     }
     
     private func changeColor() {
+
         switch currentColor {
         case .red:
             currentColor = .yellow
@@ -61,6 +63,10 @@ struct ContentView: View {
         case .green:
             currentColor = .red
         }
+    }
+    
+    private func updateButtonText() {
+        buttonText = buttonText == "Start" ? "Next" : "Next"
     }
 }
 
