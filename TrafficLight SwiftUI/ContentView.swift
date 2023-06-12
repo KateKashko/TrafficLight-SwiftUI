@@ -16,45 +16,45 @@ enum TrafficLightColor {
 struct ContentView: View {
    
     @State private var currentColor: TrafficLightColor = .red
-    @State private var buttonText = "Start"
+    @State private var buttonTitle = "Start"
+    
     var body: some View {
-        
         VStack {
             ZStack {
                 FrameView()
-                LightView(color: .red, figure: "figure.stand")
-                    .opacity(currentColor == .red ? 1 : 0.3)
+                LightView(
+                    color: .red,
+                    figure: "figure.stand",
+                    opacity: currentColor == .red ? 1 : 0.3)
             }
             ZStack {
                 FrameView()
-                LightView(color: .yellow, figure: "")
-                    .opacity(currentColor == .yellow ? 1 : 0.3)
+                LightView(
+                    color: .yellow,
+                    figure: "",
+                    opacity: currentColor == .yellow ? 1 : 0.3)
             }
             
             ZStack {
                 FrameView()
-                LightView(color: .green, figure: "figure.walk")
-                    .opacity(currentColor == .green ? 1 : 0.3)
+                LightView(
+                    color: .green,
+                    figure: "figure.walk",
+                    opacity: currentColor == .green ? 1 : 0.3)
             }
             Spacer()
-            Button(action: {
+           
+            StartButtonView(title: buttonTitle) {
+                if buttonTitle == "Start" {
+                    buttonTitle = "Next"
+                }
                 changeColor()
-                updateButtonText()
-            }) {
-                Text(buttonText)
-                    .font(.largeTitle)
-                    .frame(width: 150.0, height: 50.0)
-                    .fontWeight(.medium)
-                    .foregroundColor(Color.white)
-                    .background(Color.blue)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
             }
         }
         .padding(.top, 40)
     }
     
     private func changeColor() {
-
         switch currentColor {
         case .red:
             currentColor = .yellow
@@ -63,10 +63,6 @@ struct ContentView: View {
         case .green:
             currentColor = .red
         }
-    }
-    
-    private func updateButtonText() {
-        buttonText = buttonText == "Start" ? "Next" : "Next"
     }
 }
 
